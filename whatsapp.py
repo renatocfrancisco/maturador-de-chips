@@ -43,28 +43,28 @@ class WhatsApp(QThread):
             return QMessageBox.about(
             self.window,
             "Maturador de Chips",
-            "número de contas insuficiente para iniciar a maturação."
+            "Número de contas insuficiente para iniciar a maturação."
         )
 
         elif not self.configs["openAIToken"] and self.configs["messageInputMethod"] == "byOpenAI":
             return QMessageBox.about(
             self.window,
             "Maturador de Chips",
-            "token de acesso á API openIA invalida"
+            "Token de acesso á API openIA inválida"
         )
 
         elif not self.configs["AIUnofficialToken"] and self.configs["messageInputMethod"] == "byOpenAIUnofficial":
             return QMessageBox.about(
             self.window,
             "Maturador de Chips",
-            "cookie ou token de acesso á API não oficial invalida"
+            "Cookie ou token de acesso á API não oficial inválida"
         )
 
         elif not self.messages and self.configs["messageInputMethod"] == "byFile":
             return QMessageBox.about(
             self.window,
             "Maturador de Chips",
-            "o arquivo de mensagens base não foi escolhido ou está vazio."
+            "O arquivo de mensagens base não foi escolhido ou está vazio."
         )
         if self.configs["messageInputMethod"] != "byFile":
             self.gpt_random_message = GptGenerateMessage()
@@ -133,7 +133,7 @@ class WhatsApp(QThread):
             if isinstance(message, tuple):
                 notification.notify(
                     title="Maturador de chips",
-                    message=f"erro ao gerar mensagem com GPT: {message[1] if len(message[1]) < (255 - 32) else  message[1][:(255 - 32)]}"  ,
+                    message=f"Erro ao gerar mensagem com GPT: {message[1] if len(message[1]) < (255 - 32) else  message[1][:(255 - 32)]}"  ,
                     app_icon="pages/assets/medias/icon.ico", 
                     timeout=5,
                 )
@@ -196,21 +196,21 @@ class WhatsApp(QThread):
         if self.have_a_blocked_account and not self.configs["ContinueOnBlock"]:
             self.signals.message_box.emit(
             "Maturador de Chips",
-            f"o número {phone} foi desconectado ou banido. parando maturação!")
+            f"O número {phone} foi desconectado ou banido. Parando maturação!")
             self.signals.stop_maturation.emit()
             return True
         
         elif self.have_a_blocked_account and len(self.phones) == 2:
             self.signals.message_box.emit(
                 "Maturador de Chips",
-                f"o número {phone} foi desconectado ou banido e agora o número de contas conectadas é insuficiente para continuar. parando maturação!")
+                f"O número {phone} foi desconectado ou banido e agora o número de contas conectadas é insuficiente para continuar. Parando maturação!")
             self.signals.stop_maturation.emit()
             return True
 
         elif self.have_a_blocked_account:
             notification.notify(
                     title="Maturador de chips",
-                    message="conta desconectada ou banida: " + phone,
+                    message="Conta desconectada ou banida: " + phone,
                     app_icon="pages/assets/medias/icon.ico", 
                     timeout=5,
                 )
