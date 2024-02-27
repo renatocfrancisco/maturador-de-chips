@@ -14,7 +14,6 @@ Se você é usuário  Windows, pode [fazer download do instalador x64](https://g
 
 ```shell
 git clone https://github.com/JonasCaetanoSz/maturador-de-chips.git
-
 ```
 
 Crie um ambiente virtual e ative-o
@@ -61,7 +60,6 @@ Este é o comando pyinstaller para gerar o executável do maturador:
 
 ```shell
 pyinstaller  --noconfirm --onedir --windowed --icon "$(pwd)/pages/assets/medias/icon.ico" --add-data "$(pwd)/pages;pages/" --add-data "$(pwd)/scripts;scripts/" --add-data "$(pwd)/LICENSE;." --add-data "$(pwd)/gpt.py;." --add-data "$(pwd)/README.MD;." --add-data "$(pwd)/user-agent;." --add-data "$(pwd)/requirements.txt;."  "$(pwd)/main.py"
-
 ```
 
 ### Encontrar o cookie de sessão para API não oficial?
@@ -74,7 +72,7 @@ pyinstaller  --noconfirm --onedir --windowed --icon "$(pwd)/pages/assets/medias/
 
 ![step2](https://i.ibb.co/Q8JZpPZ/passo-2.png)
 
-- 3 ° por ultimo encontre o cookie nomeado de **_U** e copie seu valor:
+- 3 ° Por último, encontre o cookie nomeado de **_U** e copie seu valor:
 
 ![step3](https://i.ibb.co/rdBFNt4/passo-3.png)
 
