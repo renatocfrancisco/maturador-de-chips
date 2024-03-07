@@ -4,11 +4,11 @@
 ![stars](https://img.shields.io/github/stars/jonasCaetanoSz/maturador-de-chips?style=for-the-badge)
 ![version](https://img.shields.io/github/v/release/jonasCaetanoSz/maturador-de-chips?style=for-the-badge)
 
-**maturador-de-chips** é um pequeno programa para "esquentar" contas do whatssap e dessa forma, evitar banimento da rede social.
+**maturador-de-chips** é um pequeno programa para "esquentar" contas do WhatsApp e dessa forma, evitar banimento da rede social.
 
 ## Instalação
 
-Se você é usuário  Windows, pode [fazer download do instalador x64](https://github.com/JonasCaetanoSz/maturador-de-chips/releases/latest) ou siga as instruções abaixo para executar o código-fonte da versão de codigo aberto:
+Se você é usuário Windows, pode [fazer download do instalador x64](https://github.com/JonasCaetanoSz/maturador-de-chips/releases/latest) ou siga as instruções abaixo para executar o código-fonte da versão de codigo aberto:
 
 - Clone o repositório
 
