@@ -128,7 +128,7 @@ class GptGenerateMessage():
         response = g4f.ChatCompletion.create(
             model=g4f.models.gpt_4_turbo,
             provider=g4f.Provider.Bing,
-            messages=[{"role": "user", "content": "uma pergunta para você: " + question}],
+            messages=[{"role": "user", "content": "Uma pergunta para você: " + question}],
             stream=False            
             
         )
@@ -148,14 +148,14 @@ class GptGenerateMessage():
 
     def generate_question_by_official(self) -> str:
             response = self.client.chat.completions.create(
-                messages=[{"role": "user", "content":  random.choice(["conte uma curiosidade sobre " + random.choice(TOPICS) , "me faça uma pergunta sobre " + random.choice(TOPICS)]),}],
+                messages=[{"role": "user", "content":  random.choice(["Conte uma curiosidade sobre " + random.choice(TOPICS) , "me faça uma pergunta sobre " + random.choice(TOPICS)]),}],
                 model="gpt-3.5-turbo",
             )
             return response
 
     def generate_response_by_official(self, question:str) -> str:
         response = self.client.chat.completions.create(
-            messages=[{"role": "user","content": "uma pergunta para você: " + question,}],
+            messages=[{"role": "user","content": "Uma pergunta para você: " + question,}],
             model="gpt-3.5-turbo",
         )
         return response.strip()

@@ -188,16 +188,16 @@ class MainWindow(QMainWindow):
     def create_session(self):
         
         while True:
-            session_name, want_continue = QInputDialog.getText(self, "Maturador de chips" ,"qual o nome você quer definir para essa instância?")
+            session_name, want_continue = QInputDialog.getText(self, "Maturador de chips" ,"Qual o nome que você quer definir para essa instância?")
 
             if not want_continue:
                 return
 
             elif not session_name or session_name.isspace():
-                QMessageBox.critical(self, "Maturador de chips","o nome da instância não pode estar vazio")
+                QMessageBox.critical(self, "Maturador de chips","O nome da instância não pode estar vazio")
             
             elif len(session_name) > 11:
-                QMessageBox.critical(self, "Maturador de chips","o nome da instância não pode ter mais de 11 dígitos")
+                QMessageBox.critical(self, "Maturador de chips","O nome da instância não pode ter mais de 11 dígitos")
             
             elif os.path.exists(os.path.join("sessions", f"@{session_name}")):
                 QMessageBox.critical(self, "Maturador de chips", f"já existe uma instância com o nome {session_name}, escolha outro.")
@@ -352,12 +352,12 @@ class MainWindow(QMainWindow):
 
     def delete_session(self):
         if not self.selected_button:
-            return QMessageBox.critical(self, "Maturador de chips","nenhuma instância aberta, impossível apagar.")
+            return QMessageBox.critical(self, "Maturador de chips","Nenhuma instância aberta, impossível apagar.")
         
         confirm = QMessageBox.question(
             self,
             "Maturador de chips",
-            f"""você tem certeza que quer apagar a instância "{self.selected_button.replace("@", "")}" ?""",
+            f"""Você tem certeza que quer apagar a instância "{self.selected_button.replace("@", "")}" ?""",
             QMessageBox.StandardButton.Apply,
             QMessageBox.StandardButton.Abort
         )

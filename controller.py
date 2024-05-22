@@ -71,17 +71,17 @@ class Controller(QObject):
         filetypes=[("Arquivos de Texto", "*.txt"),],
         title="Maturador de Chips - selecione o arquivo de mensagens base")
         if not file_path:
-            return json.dumps({"ok":False, "message": "nenhum arquivo selecionado", "filename": self.messages_base["filename"]})
+            return json.dumps({"ok":False, "message": "Nenhum arquivo selecionado", "filename": self.messages_base["filename"]})
         file = open(mode="r", encoding="utf8", file=file_path)
         
         if not file.read():
             file.close()
-            return json.dumps({"ok":False, "message": "o arquivo selecionado está vazio.",  "filename": self.messages_base["filename"]})
+            return json.dumps({"ok":False, "message": "O arquivo selecionado está vazio.",  "filename": self.messages_base["filename"]})
         file.seek(0)
         self.messages_base["filename"]= file.name.split("/")[len(file.name.split("/")) - 1]
         self.messages_base["content"]= file.readlines()
         file.close()
-        return  json.dumps({"ok":True, "message": "alterações foram salvas com êxito",  "filename": self.messages_base["filename"]})
+        return  json.dumps({"ok":True, "message": "Alterações foram salvas com êxito",  "filename": self.messages_base["filename"]})
     
     # mostrar versão do projeto
 
@@ -90,7 +90,7 @@ class Controller(QObject):
         QMessageBox.about(
             self.dashboard_window,
             "Maturador de Chips",
-            f"você está usando a versão {self.VERSION}, verifique a qualquer momento no github se há atualizações disponíveis."
+            f"Você está usando a versão {self.VERSION}. Verifique a qualquer momento no github se há atualizações disponíveis."
         )
 
     # mostrar pagina do disparador 
@@ -100,7 +100,7 @@ class Controller(QObject):
             QMessageBox.about(
             self.dashboard_window,
             "Maturador de Chips",
-            "este recurso estará disponível na proxima atualização!"
+            "Este recurso estará disponível na proxima atualização!"
         )
 
 
@@ -125,7 +125,7 @@ class Controller(QObject):
         configs_file = open(file="state.json", mode="w", encoding="utf8")
         json.dump(new_configs,configs_file, indent=2)
         configs_file.close()
-        return json.dumps({"ok":True, "message":"alterações foram salvas com êxito"})
+        return json.dumps({"ok":True, "message":"Alterações foram salvas com êxito"})
 
     # nova conta adicionada
 
