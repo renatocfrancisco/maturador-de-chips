@@ -56,7 +56,7 @@ python main.py
 
 ### Como gerar meu próprio executável?
 
-Este é o comando pyinstaller para gerar o executável do maturador:
+Este é o comando [pyinstaller](https://pypi.org/project/pyinstaller/) para gerar o executável do maturador:
 
 ```shell
 pyinstaller  --noconfirm --onedir --windowed --icon "$(pwd)/pages/assets/medias/icon.ico" --add-data "$(pwd)/pages;pages/" --add-data "$(pwd)/scripts;scripts/" --add-data "$(pwd)/LICENSE;." --add-data "$(pwd)/gpt.py;." --add-data "$(pwd)/README.MD;." --add-data "$(pwd)/user-agent;." --add-data "$(pwd)/requirements.txt;."  "$(pwd)/main.py"
